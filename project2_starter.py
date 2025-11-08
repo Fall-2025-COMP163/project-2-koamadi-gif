@@ -1,6 +1,6 @@
 """
 COMP 163 - Project 2: Character Abilities Showcase
-Name: [Your Name Here]
+Name: Kobby Amadi
 Date: [Date]
 
 AI Usage: [Document any AI assistance used]
@@ -63,7 +63,11 @@ class Character:
         """Initialize basic character attributes"""
         # TODO: Set the character's name, health, strength, and magic
         # These should be stored as instance variables
-        pass
+        self.name = name
+        self.health = health
+        self.strength = strength
+        self.magic = magic
+    
         
     def attack(self, target):
         """
@@ -76,7 +80,10 @@ class Character:
         # TODO: Implement basic attack
         # Damage should be based on self.strength
         # Use target.take_damage(damage) to apply damage
-        pass
+        damage = self.strength
+        print(f"{self.name} attacks {target.name} for {damage} damage!")
+        target.take_damage(damage)
+    
         
     def take_damage(self, damage):
         """
@@ -86,7 +93,11 @@ class Character:
         # TODO: Implement taking damage
         # Reduce self.health by damage amount
         # Make sure health doesn't go below 0
-        pass
+         self.health -= damage
+        if self.health < 0:
+            self.health = 0
+        print(f"{self.name} takes {damage} damage! Health is now {self.health}.")
+
         
     def display_stats(self):
         """
@@ -94,7 +105,8 @@ class Character:
         """
         # TODO: Print character's name, health, strength, and magic
         # Make it look nice with formatting
-        pass
+        print(f"{self.name} | Health: {self.health} | Strength: {self.strength} | Magic: {self.magic}")
+    
 
 class Player(Character):
     """
