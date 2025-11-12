@@ -240,7 +240,7 @@ class Rogue(Player):
         Guaranteed critical hit that deals double damage.
         """
         damage = self.strength * 2
-        print(f"🗡️ {self.name} performs a SNEAK ATTACK on {target.name} for {damage} damage!")
+        print(f"{self.name} performs a SNEAK ATTACK on {target.name} for {damage} damage!")
         target.take_damage(damage)
 
 
