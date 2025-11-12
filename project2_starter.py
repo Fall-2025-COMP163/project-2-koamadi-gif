@@ -1,4 +1,4 @@
-import random
+import random # Used by Rogue for the random chance of a critical hit
 """
 COMP 163 - Project 2: Character Abilities Showcase
 Name: Kobby Amadi
