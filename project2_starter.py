@@ -99,11 +99,11 @@ class Player(Character):
 
 
 # ----------------------------------------------------------------------------
-class Warrior(Player):
+class Gladiator(Player):
     """Strong physical fighter."""
 
     def __init__(self, name):
-        super().__init__(name, "Warrior", health=120, strength=15, magic=5)
+        super().__init__(name, "Gladiator", health=120, strength=15, magic=5)
 
     def attack(self, target):
         """Powerful melee attack."""
@@ -139,18 +139,18 @@ class Mage(Player):
 
 
 # ----------------------------------------------------------------------------
-class Rogue(Player):
+class Ninja(Player):
     """Quick and sneaky fighter."""
 
     def __init__(self, name):
-        super().__init__(name, "Rogue", health=90, strength=12, magic=10)
+        super().__init__(name, "Ninja", health=90, strength=12, magic=10)
 
     def attack(self, target):
         """Attack with chance of critical hit."""
         crit_chance = random.randint(1, 10)
         if crit_chance <= 3:
             damage = self.strength * 2
-            print(f"💥 Critical hit! {self.name} strikes {target.name} for {damage} damage!")
+            print(f"Critical hit! {self.name} strikes {target.name} for {damage} damage!")
         else:
             damage = self.strength
             print(f"{self.name} attacks {target.name} for {damage} damage.")
