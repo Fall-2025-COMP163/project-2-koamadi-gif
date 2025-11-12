@@ -99,11 +99,11 @@ class Player(Character):
 
 
 # ----------------------------------------------------------------------------
-class Gladiator(Player):
+class Warrior(Player):
     """Strong physical fighter."""
 
     def __init__(self, name):
-        super().__init__(name, "Gladiator", health=120, strength=15, magic=5)
+        super().__init__(name, "Warrior", health=120, strength=15, magic=5)
 
     def attack(self, target):
         """Powerful melee attack."""
@@ -139,11 +139,11 @@ class Mage(Player):
 
 
 # ----------------------------------------------------------------------------
-class Ninja(Player):
+class Rogue(Player):
     """Quick and sneaky fighter."""
 
     def __init__(self, name):
-        super().__init__(name, "Ninja", health=90, strength=12, magic=10)
+        super().__init__(name, "Rogue", health=90, strength=12, magic=10)
 
     def attack(self, target):
         """Attack with chance of critical hit."""
