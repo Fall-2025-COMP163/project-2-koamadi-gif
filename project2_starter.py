@@ -95,8 +95,8 @@ class Character:
         Reduces health by the damage received.
         Prevents health from dropping below zero.
         """
-        self.health -= damage  # Subtract incoming damage
-        if self.health < 0:    # Prevent negative health
+        self.health -= damage  # Subtracts incoming damage
+        if self.health < 0:    # Stop health from going negative
             self.health = 0
         print(f"{self.name} takes {damage} damage! Health is now {self.health}.")
 
@@ -247,49 +247,49 @@ if __name__ == "__main__":
     print("Testing inheritance, polymorphism, and method overriding")
     print("=" * 50)
     
-    # TODO: Create one of each character type
-    # warrior = Warrior("Sir Galahad")
-    # mage = Mage("Merlin")
-    # rogue = Rogue("Robin Hood")
+    # Create characters
+    warrior = Warrior("Sir Galahad")
+    mage = Mage("Merlin")
+    rogue = Rogue("Robin Hood")
     
-    # TODO: Display their stats
-    # print("\n📊 Character Stats:")
-    # warrior.display_stats()
-    # mage.display_stats()
-    # rogue.display_stats()
+    # Display stats
+    print("\n📊 Character Stats:")
+    warrior.display_stats()
+    mage.display_stats()
+    rogue.display_stats()
     
-    # TODO: Test polymorphism - same method call, different behavior
-    # print("\n⚔️ Testing Polymorphism (same attack method, different behavior):")
-    # dummy_target = Character("Target Dummy", 100, 0, 0)
-    # 
-    # for character in [warrior, mage, rogue]:
-    #     print(f"\n{character.name} attacks the dummy:")
-    #     character.attack(dummy_target)
-    #     dummy_target.health = 100  # Reset dummy health
+    # Polymorphism test — all use attack(), but behavior varies
+    print("\n⚔️ Testing Polymorphism (same attack method, different behavior):")
+    dummy_target = Character("Target Dummy", 100, 0, 0)
     
-    # TODO: Test special abilities
-    # print("\n✨ Testing Special Abilities:")
-    # target1 = Character("Enemy1", 50, 0, 0)
-    # target2 = Character("Enemy2", 50, 0, 0)
-    # target3 = Character("Enemy3", 50, 0, 0)
-    # 
-    # warrior.power_strike(target1)
-    # mage.fireball(target2)
-    # rogue.sneak_attack(target3)
+    for character in [warrior, mage, rogue]:
+        print(f"\n{character.name} attacks the dummy:")
+        character.attack(dummy_target)
+        dummy_target.health = 100  # Reset
     
-    # TODO: Test composition with weapons
-    # print("\n🗡️ Testing Weapon Composition:")
-    # sword = Weapon("Iron Sword", 10)
-    # staff = Weapon("Magic Staff", 15)
-    # dagger = Weapon("Steel Dagger", 8)
-    # 
-    # sword.display_info()
-    # staff.display_info()
-    # dagger.display_info()
+    # Special abilities
+    print("\n✨ Testing Special Abilities:")
+    target1 = Character("Enemy1", 50, 0, 0)
+    target2 = Character("Enemy2", 50, 0, 0)
+    target3 = Character("Enemy3", 50, 0, 0)
     
-    # TODO: Test the battle system
-    # print("\n⚔️ Testing Battle System:")
-    # battle = SimpleBattle(warrior, mage)
-    # battle.fight()
+    warrior.power_strike(target1)
+    mage.fireball(target2)
+    rogue.sneak_attack(target3)
+    
+    # Weapon composition
+    print("\n🗡️ Testing Weapon Composition:")
+    sword = Weapon("Iron Sword", 10)
+    staff = Weapon("Magic Staff", 15)
+    dagger = Weapon("Steel Dagger", 8)
+    
+    sword.display_info()
+    staff.display_info()
+    dagger.display_info()
+    
+    # Battle system test
+    print("\n⚔️ Testing Battle System:")
+    battle = SimpleBattle(warrior, mage)
+    battle.fight()
     
     print("\n✅ Testing complete!")
